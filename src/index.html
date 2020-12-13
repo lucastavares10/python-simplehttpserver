@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python SimpleServer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+  </head>
+
+  <style>
+    .head {
+      background-color: #94b4a4;
+      height: 150px;
+    }
+
+    .head h1 {
+      font-weight: 800;
+      margin-top: 50px;
+      color: #373a40;
+    }
+
+    .body {
+      background-color: #e8e8e8;
+    }
+
+    .buttonsGroup {
+      width: 100%;
+      text-align: end;
+    }
+  </style>
+
+  <body class="body">
+    <div class="container-fluid">
+      <div class="head">
+        <div class="row mb-3 mt-3">
+          <div class="col-md-6 offset-md-2">
+            <h1>Python SimpleServer</h1>
+          </div>
+          <div class="col-md-2 mt-5">
+            <button type="button" class="btn btn-dark" onclick="listRedirect()">
+              List users
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3 mt-5">
+        <div class="col-md-8 offset-md-2">
+          <form action="" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                required
+                type="text"
+                class="form-control"
+                name="name"
+                id="name"
+                placeholder="Input your name..."
+              />
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    required
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="Input your email..."
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="age">Age</label>
+                  <input
+                    required
+                    type="number"
+                    class="form-control"
+                    name="age"
+                    id="age"
+                    placeholder="Input your age..."
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="sex">Sex</label>
+                  <select name="sex" id="sex" class="form-control">
+                    <option value="">Selecione...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    name="phone"
+                    id="phone"
+                    placeholder="(00) 0000-0000"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="buttonsGroup">
+              <button type="submit" class="btn btn-success mt-5">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    $(document).ready(function () {
+      $("#phone").mask("(00) 00000-0000");
+    });
+
+    function listRedirect() {
+      window.location.href = "/user/list";
+    }
+  </script>
+</html>
